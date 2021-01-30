@@ -25,7 +25,7 @@ public class TestPlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //transform.position = startingPosition.initialValue;
+        transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame
@@ -35,7 +35,6 @@ public class TestPlayerMove : MonoBehaviour
         {
             CheckInteraction();
         }
-
         PlayerMove();
     }
 

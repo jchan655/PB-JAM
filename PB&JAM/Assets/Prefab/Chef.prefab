@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4660248572225769219}
   m_Layer: 0
   m_Name: Chef
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   e: {fileID: 0}
   animator: {fileID: 4660248572225769219}
   moveSpeed: 0.5
+  startingPosition: {fileID: 11400000, guid: 23d9af5bb60666340a53cb61c5ab6341, type: 2}
 --- !u!95 &4660248572225769219
 Animator:
   serializedVersion: 3
