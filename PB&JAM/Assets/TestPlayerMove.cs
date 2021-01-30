@@ -25,8 +25,31 @@ public class TestPlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveDirection = Input.GetAxis("Horizontal");
+        PlayerMove();
+    }
 
+    void PlayerMove()
+    {
+        //Controls
+        moveDirection = Input.GetAxis("Horizontal");
+        //Player direction
+        if (moveDirection > 0 && !facingright)
+        {
+            FlipCharacter();
+        }
+        else if (moveDirection < 0 && facingright)
+        {
+            FlipCharacter();
+        }
+        //Animation
+        
+        //Movement
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+    }
+
+    void FlipCharacter()
+    {
+        facingright = !facingright;
+        transform.Rotate(0f, 180f, 0f);
     }
 }
