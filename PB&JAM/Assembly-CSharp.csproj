@@ -52,6 +52,8 @@
      <Compile Include="Assets\Interactable.cs" />
      <Compile Include="Assets\Collision.cs" />
      <Compile Include="Assets\TestPlayerMove.cs" />
+     <Compile Include="Assets\SceneTransition.cs" />
+     <Compile Include="Assets\VectorValue.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

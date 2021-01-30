@@ -15,6 +15,8 @@ public class TestPlayerMove : MonoBehaviour
 
     private Vector2 boxSize = new Vector2(1f, 1f);
 
+    public VectorValue startingPosition;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,7 +25,7 @@ public class TestPlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame

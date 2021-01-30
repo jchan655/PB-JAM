@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BWThroneRoom.unity
+    guid: 6495222dd99a2b74287cc364e8a30a2b
+  - enabled: 1
+    path: Assets/Scenes/Tower1.unity
+    guid: 395524772926cf041a57df7052b8a845
   m_configObjects: {}
