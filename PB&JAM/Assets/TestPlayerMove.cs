@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class TestPlayerMove : MonoBehaviour
 {
+    public GameObject e;
 
     public float moveSpeed = 10;
     
     private bool facingright = true;
     private float moveDirection;
     private Rigidbody2D rb;
+
+    private Vector2 boxSize = new Vector2(1f, 1f);
 
     private void Awake()
     {
@@ -25,6 +28,11 @@ public class TestPlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            CheckInteraction();
+        }
+
         PlayerMove();
     }
 
@@ -51,5 +59,32 @@ public class TestPlayerMove : MonoBehaviour
     {
         facingright = !facingright;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+
+    public void OpenInteractableIcon()
+    {
+        e.SetActive(true);
+    }
+    public void CloseInteractableIcon()
+    {
+        e.SetActive(false);
+    }
+
+    private void CheckInteraction()
+    {
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
+
+        if(hits.Length > 0)
+        {
+            foreach (RaycastHit2D rc in hits)
+            {
+                if(rc.IsInteractable())
+                {
+                    rc.Interact();
+                    return;
+                }
+            }
+        }
     }
 }
