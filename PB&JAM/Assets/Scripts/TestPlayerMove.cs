@@ -5,17 +5,17 @@ using UnityEngine;
 public class TestPlayerMove : MonoBehaviour
 {
     public GameObject e;
-    public Animator animator;
+    //public Animator animator;
 
     public float moveSpeed = 10;
-    
+
+    //public VectorValue startingPosition;
+
     private bool facingright = true;
     private float moveDirection;
     private Rigidbody2D rb;
 
     private Vector2 boxSize = new Vector2(1f, 1f);
-
-    public VectorValue startingPosition;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class TestPlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = startingPosition.initialValue;
+        //transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class TestPlayerMove : MonoBehaviour
             FlipCharacter();
         }
         //Animation
-        animator.SetFloat("Speed", Mathf.Abs(moveDirection));
+        //animator.SetFloat("Speed", Mathf.Abs(moveDirection));
         
         //Movement
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
