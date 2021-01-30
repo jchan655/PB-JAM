@@ -7,8 +7,6 @@ public class TestPlayerMove : MonoBehaviour
     public GameObject e;
     public Animator animator;
 
-
-
     public float moveSpeed = 10;
     
     private bool facingright = true;
@@ -54,10 +52,10 @@ public class TestPlayerMove : MonoBehaviour
             FlipCharacter();
         }
         //Animation
+        animator.SetFloat("Speed", Mathf.Abs(moveDirection));
         
         //Movement
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
-        animator.SetFloat("Speed", Mathf.Abs(moveDirection));
     }
 
     void FlipCharacter()
