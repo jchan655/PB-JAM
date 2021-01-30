@@ -5,6 +5,9 @@ using UnityEngine;
 public class TestPlayerMove : MonoBehaviour
 {
     public GameObject e;
+    public Animator animator;
+
+
 
     public float moveSpeed = 10;
     
@@ -40,6 +43,7 @@ public class TestPlayerMove : MonoBehaviour
     {
         //Controls
         moveDirection = Input.GetAxis("Horizontal");
+
         //Player direction
         if (moveDirection > 0 && !facingright)
         {
@@ -53,6 +57,7 @@ public class TestPlayerMove : MonoBehaviour
         
         //Movement
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(moveDirection));
     }
 
     void FlipCharacter()
@@ -86,5 +91,5 @@ public class TestPlayerMove : MonoBehaviour
                 }
             }
         }
-    }
+    } 
 }
